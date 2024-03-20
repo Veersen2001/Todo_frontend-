@@ -1,0 +1,170 @@
+.container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:100px;
+    gap: 40px;
+
+
+
+}
+h1{
+    color:#fff; 
+}
+.top{
+    display: flex;
+    align-items:flex-end;
+    gap: 10px;
+    align-items: center;
+    
+
+}
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #1cb8a1, #bc0fc8);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* Add button */
+
+.add-btn {
+	color: #fff;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+	transition: all 0.5s;
+	position: relative;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.add-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.1);
+	transition: all 0.3s;
+}
+.add-btn:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.add-btn::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1px solid rgba(255,255,255,0.5);
+	transform: scale(1.2,1.2);
+    border-radius: 5px;
+}
+.add-btn:hover::after {
+	opacity: 1;
+	transform: scale(1,1);
+}
+
+.list{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 40%;
+
+
+    
+}
+.list{
+  --b: .2em;
+  /* border width */
+  --c: 4em;
+  /* corner size */
+  --r: 2em;
+  /* corner rounding */
+  position: relative;
+  margin: 1em auto;
+  border: solid var(--b) transparent;
+  padding: 1em;
+  max-width: 23em;
+  font: 1.25em ubuntu, sans-serif;
+}
+div::before {
+  position: absolute;
+  z-index: -1;
+  inset: calc(-1*var(--b));
+  border: inherit;
+  border-radius: var(--r);
+  background: linear-gradient(orange, deeppink, purple) border-box;
+  --corner:
+  	conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0)
+  		0 0/ calc(100% - var(--c)) calc(100% - var(--c)) border-box;
+  --inner: conic-gradient(red 0 0) padding-box;
+  -webkit-mask: var(--corner), var(--inner);
+  -webkit-mask-composite: source-out;
+  mask: var(--corner) subtract, var(--inner);
+  content: "";
+}
